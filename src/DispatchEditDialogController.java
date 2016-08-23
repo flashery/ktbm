@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,7 +44,9 @@ public class DispatchEditDialogController {
     //@FXML
     //private TextField timeInField;
     @FXML
-    private TextField timeOutField;
+    private TextField timeInField;
+    //@FXML
+    //private TextField timeOutField;
     //@FXML
     //private TextField carBrandField;
     //@FXML
@@ -72,7 +73,6 @@ public class DispatchEditDialogController {
      * @throws InstantiationException
      * @throws ClassNotFoundException
      */
-    @FXML
     private void initialize() throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
         if (!Constants.USERTYPE.equals("admin")) {
@@ -87,32 +87,22 @@ public class DispatchEditDialogController {
     }
 
     private void initializeTxtFields() {
-        driverField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(
-                    ObservableValue<? extends Boolean> arg0,
-                    Boolean oldPropertyValue, Boolean newPropertyValue) {
-                if (!newPropertyValue) {
-                    if (driverField.getText().trim().length() != 0) {
-                        setContactNumber();
-                    }
+        driverField.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (!newPropertyValue) {
+                if (driverField.getText().trim().length() != 0) {
+                    setContactNumber();
                 }
             }
         });
-        unitNumField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(
-                    ObservableValue<? extends Boolean> arg0,
-                    Boolean oldPropertyValue, Boolean newPropertyValue) {
-                if (!newPropertyValue) {
-                    try {
-                        if (unitNumField.getText().trim().length() != 0) {
-                            setCarRateBrand();
-                        }
-                    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
+        unitNumField.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (!newPropertyValue) {
+                try {
+                    if (unitNumField.getText().trim().length() != 0) {
+                        setCarRateBrand();
                     }
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println(e.getMessage());
                 }
             }
         });
@@ -130,7 +120,7 @@ public class DispatchEditDialogController {
     /**
      * Sets the dispatch to be edited in the dialog.
      *
-     * @param dispatch
+     * @param object
      */
     public void setDispatch(Object object) {
         this.dispatch = (Dispatch) object;
@@ -141,15 +131,14 @@ public class DispatchEditDialogController {
         if (dispatch.getTimeOut() == null) {
             System.out.println("AW aw aw");
             try {
-                timeOutField.setText(DateUtil.formatStringDT(DateUtil.newDateTime()));		// Format the string into LocalDate format.
+                timeInField.setText(DateUtil.formatStringDT(DateUtil.newDateTime()));		// Format the string into LocalDate format.
             } catch (ParseException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
 
         } else {
-            System.out.println(dispatch.getTimeOut());
-            timeOutField.setText(dispatch.getTimeOut());
+            timeInField.setText(dispatch.getTimeOut());
         }
         dispatch.setStatus(Dispatch.DISPATCH_STATUS[0]);
         vehiclePlateLbl.setText(dispatch.getVehicle());
@@ -163,21 +152,19 @@ public class DispatchEditDialogController {
             String dateString;
             try {
                 dateString = DateUtil.reformatDate(DateUtil.newDate());
-                dateField.setValue(DateUtil.parse(dateString));	// Format the string into LocalDate format.
+                dateField.setValue(DateUtil.parse(dateString));                 // Format the string into LocalDate format.
             } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } // Reverse the string from its database format.
+                System.out.println(e.getMessage());
+            }
 
         } else {
             try {
 
-                String dateString = DateUtil.reformatDate(dispatch.getDate()); // Reverse the string from its database format.
-                dateField.setValue(DateUtil.parse(dateString));	// Format the string into LocalDate format.
+                String dateString = DateUtil.reformatDate(dispatch.getDate());  // Reverse the string from its database format.
+                dateField.setValue(DateUtil.parse(dateString));                 // Format the string into LocalDate format.
 
             } catch (ParseException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -216,7 +203,7 @@ public class DispatchEditDialogController {
 
             this.setAdmin();
             //dispatch.setTimeIn(timeInField.getText());
-            dispatch.setTimeOut(timeOutField.getText());
+            dispatch.setTimeOut(timeInField.getText());
             dispatch.setBrand(carBrandLbl.getText());
             dispatch.setRate(Double.parseDouble(carRateLbl.getText()));
             dispatch.setStatus(dispatch.getStatus());
@@ -348,8 +335,7 @@ public class DispatchEditDialogController {
                 result = true;
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return result;
@@ -431,8 +417,7 @@ public class DispatchEditDialogController {
             }
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         //showDriverProfile();
 
@@ -492,8 +477,7 @@ public class DispatchEditDialogController {
                 result = true;
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return result;
@@ -522,8 +506,7 @@ public class DispatchEditDialogController {
             main.showProfileDialog(driver, "DriverProfileDialog.fxml");
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException | ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
     }
