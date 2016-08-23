@@ -149,51 +149,61 @@ public class Main extends Application {
 			dialogStage.setScene(scene);
 			dialogStage.sizeToScene();
 
-			// Set the controller.
-			if (fxml.equals("AdminEditDialog.fxml")) {
-				AdminEditDialogController controller = loader.getController();
-				controller.setDialogStage(dialogStage);
-				controller.setAdmins(object);
-				// Show the dialog and wait until the user closes it
-				dialogStage.showAndWait();
-
-				isOkClicked = controller.isOkClicked();
-				
-			} else if (fxml.equals("DriversEditDialog.fxml")) {
-				DriversEditDialogController controller = loader.getController();
-				controller.setDialogStage(dialogStage);
-				controller.setDrivers(object);
-				// Show the dialog and wait until the user closes it
-				dialogStage.showAndWait();
-
-				isOkClicked = controller.isOkClicked();
-			}
-			else if (fxml.equals("VehiclesEditDialog.fxml")) {
-				VehiclesEditDialogController controller = loader.getController();
-				controller.setDialogStage(dialogStage);
-				controller.setVehicles(object);
-				// Show the dialog and wait until the user closes it
-				dialogStage.showAndWait();
-
-				isOkClicked = controller.isOkClicked();
-			}
-			else if (fxml.equals("DispatchEditDialog.fxml")) {
-				DispatchEditDialogController controller = loader.getController();
-				controller.setDialogStage(dialogStage);
-				controller.setDispatch(object);
-				// Show the dialog and wait until the user closes it
-				dialogStage.showAndWait();
-
-				isOkClicked = controller.isOkClicked();
-			} else if (fxml.equals("InventoryEditDialog.fxml")) {
-				InventoryEditDialogController controller = loader.getController();
-				controller.setDialogStage(dialogStage);
-				controller.setInventory(object);
-				// Show the dialog and wait until the user closes it
-				dialogStage.showAndWait();
-
-				isOkClicked = controller.isOkClicked();
-			}
+                    // Set the controller.
+                    switch (fxml) {
+                        case "AdminEditDialog.fxml":
+                            {
+                                AdminEditDialogController controller = loader.getController();
+                                controller.setDialogStage(dialogStage);
+                                controller.setAdmins(object);
+                                // Show the dialog and wait until the user closes it
+                                dialogStage.showAndWait();
+                                isOkClicked = controller.isOkClicked();
+                                break;
+                            }
+                        case "DriversEditDialog.fxml":
+                            {
+                                DriversEditDialogController controller = loader.getController();
+                                controller.setDialogStage(dialogStage);
+                                controller.setDrivers(object);
+                                // Show the dialog and wait until the user closes it
+                                dialogStage.showAndWait();
+                                isOkClicked = controller.isOkClicked();
+                                break;
+                            }
+                        case "VehiclesEditDialog.fxml":
+                            {
+                                VehiclesEditDialogController controller = loader.getController();
+                                controller.setDialogStage(dialogStage);
+                                controller.setVehicles(object);
+                                // Show the dialog and wait until the user closes it
+                                dialogStage.showAndWait();
+                                isOkClicked = controller.isOkClicked();
+                                break;
+                            }
+                        case "DispatchEditDialog.fxml":
+                            {
+                                DispatchEditDialogController controller = loader.getController();
+                                controller.setDialogStage(dialogStage);
+                                controller.setDispatch(object);
+                                // Show the dialog and wait until the user closes it
+                                dialogStage.showAndWait();
+                                isOkClicked = controller.isOkClicked();
+                                break;
+                            }
+                        case "InventoryEditDialog.fxml":
+                            {
+                                InventoryEditDialogController controller = loader.getController();
+                                controller.setDialogStage(dialogStage);
+                                controller.setInventory(object);
+                                // Show the dialog and wait until the user closes it
+                                dialogStage.showAndWait();
+                                isOkClicked = controller.isOkClicked();
+                                break;
+                            }
+                        default:
+                            break;
+                    }
 			
 			return isOkClicked;
 			
