@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-stylesheet vista.css?>
+
+<VBox minWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+  <children>
+      <HBox id="header" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Pane id="logo" prefHeight="58.0" prefWidth="245.0" />
+            <Button fx:id="dispatchBtn" alignment="CENTER" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Dispatch">
+               <HBox.margin>
+                  <Insets left="20.0" top="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="summaryBtn" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Summary">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="paymentsBtn" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Payments">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="driversBtn" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Drivers">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="vehiclesBtn" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Vehicles">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="inventoryBtn" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Inventory">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="adminsBtn" mnemonicParsing="false" onAction="#setPane" styleClass="headerBtn" text="Admins">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin></Button>
+            <Label fx:id="userLabel" alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="55.0" text="Login as: ">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label id="userLabel" fx:id="userLabel" onMouseClicked="#showUserListMenu" styleClass="main-links" text="Label" textFill="#3558d7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label id="userLabel" fx:id="logoutLabel" onMouseClicked="#doLogout" styleClass="main-links" text="| Logout" textFill="#3558d7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+    <StackPane fx:id="vistaHolder" prefHeight="358.0" prefWidth="635.0" VBox.vgrow="ALWAYS" />
+  </children>
+</VBox>

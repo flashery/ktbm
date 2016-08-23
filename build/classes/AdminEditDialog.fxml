@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminEditDialogController">
+   <children>
+      <GridPane layoutX="19.0" layoutY="73.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="109.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="171.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="28.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="10.0" prefWidth="182.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Username" />
+            <Label text="First Name" GridPane.rowIndex="3" />
+            <Label text="Last Name" GridPane.rowIndex="5" />
+            <Label text="Email" GridPane.rowIndex="6" />
+            <Label text="User Type" GridPane.rowIndex="7" />
+            <TextField fx:id="usernameField" editable="true" GridPane.columnIndex="1" />
+            <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Middle Name" GridPane.rowIndex="4" />
+            <TextField fx:id="middleNameField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="userTypeChoice" prefHeight="25.0" prefWidth="233.0" promptText="Select User Type" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Password 1" GridPane.rowIndex="1" />
+            <Label text="Password 2" GridPane.rowIndex="2" />
+            <PasswordField fx:id="password1Field" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="password2Field" promptText="Re-enter password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Employment Status" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <ComboBox fx:id="empStatusCmb" prefHeight="25.0" prefWidth="234.0" promptText="Select Employment Status" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Label text="Birth Date" GridPane.columnIndex="3" />
+            <Label text="Birth Place" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Age" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Previous Company" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <DatePicker fx:id="birthDateDp" onAction="#setAge" prefHeight="25.0" prefWidth="216.0" GridPane.columnIndex="4" />
+            <TextField fx:id="birtPlaceTxt" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="ageLbl" text="0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="prevCompanyTxt" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label text="Contact Number" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label text="Spouse" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label text="Referral" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <TextField fx:id="contactNumberTxt" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <TextField fx:id="referralTxt" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <TextField fx:id="spouseTxt" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <ComboBox fx:id="maritalStatusCmb" onAction="#disableSpouse" prefHeight="25.0" prefWidth="197.0" promptText="Select Marital Status" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label text="Marital Status" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <HBox layoutX="454.0" layoutY="407.0" spacing="5.0">
+         <children>
+            <Button layoutX="156.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="80.0" text="OK" />
+            <Button layoutX="219.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="80.0" text="Cancel" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="-1.0" prefHeight="47.0" prefWidth="647.0" style="-fx-background-color: #cccccc;">
+         <children>
+            <Label layoutX="46.0" layoutY="14.0" text="Add/Edit Administrator" textFill="#2b49b9">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,106 @@
+/**
+ * vista.css
+ *   Place in the same source directory as Main.java
+ *   Ensure that your build system copies this file to your build output directory.
+ */
+#header {
+	-fx-background-color: #ffffff;
+}
+#logo {
+	-fx-background-image: url("images/logo.png");
+}
+.main-links {
+	-fx-cursor: hand;
+}
+.headerBtn {
+	-fx-padding: 3 15 10 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.1em;
+	-fx-cursor: hand;
+}
+.selected-menu {
+	-fx-padding: 6 15 7 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: 
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 1.1em;
+	-fx-cursor: hand;
+}
+.login-links {
+	-fx-text-fill: #0000FF;
+	-fx-underline: true;
+	-fx-cursor: hand;
+}
+#vista2 {
+    -fx-background-color: coral;
+}
+.login-container {
+	-fx-background-color: #CCCCCC;
+}
+.table-row-cell{
+	-fx-background-color: #FEFF99;
+	-fx-background: #FEFF99;
+	-fx-alignment: center-left;
+	-fx-border-width: .1px .0px .1px .0px; 
+	-fx-border-style: solid;
+	-fx-border-color: #333333;
+}
+.on-dispatch {
+	-fx-background-color: green;
+	-fx-background: green;
+	-fx-alignment: center-left;
+	-fx-border-width: .1px .0px .1px .0px; 
+	-fx-border-style: solid;
+	-fx-border-color: #FFFFFF;
+}
+.off-dispatch {
+	-fx-background-color: #333333;
+	-fx-background: #333333;
+	-fx-alignment: center-left;
+	-fx-border-width: .1px .0px .1px .0px; 
+	-fx-border-style: solid;
+	-fx-border-color: #FFFFFF;
+}
+.warning {
+	-fx-background-color: #E67D21;
+	-fx-background: #E67D21;
+	-fx-alignment: center-left;
+	-fx-border-width: .1px .0px .1px .0px; 
+	-fx-border-style: solid;
+	-fx-border-color: #FFFFFF;
+}
+.expired, .late{
+	-fx-background-color: #E74B32;
+	-fx-background: #E74B32;
+	-fx-alignment: center-left ;
+	-fx-border-width: .1px .0px .1px .0px; 
+	-fx-border-style: solid;
+	-fx-border-color: #FFFFFF;
+}
+.inactive {
+	-fx-background-color: #ED1C24;
+	-fx-background: #ED1C24;
+	-fx-alignment: center-left;
+	-fx-border-width: .1px .0px .1px .0px; 
+	-fx-border-style: solid;
+	-fx-border-color: #FFFFFF;
+}
+.table-row-cell:selected {
+   -fx-background-color: #004696; 
+}
+.table-row-cell:selected .text {
+       -fx-fill: #FFFFFF;
+
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="449.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="14.0" layoutY="99.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="108.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="176.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Unit Number" />
+            <Label text="Trip" GridPane.rowIndex="4" />
+            <Label text="Driver" GridPane.rowIndex="1" />
+            <Label text="Present Odo" GridPane.rowIndex="3" />
+            <Label text="Gas" GridPane.rowIndex="5" />
+            <HBox fx:id="toolsCheck" alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <CheckBox fx:id="checkTools" mnemonicParsing="false" text="Check Tools" />
+               </children>
+                <children>
+            	  <CheckBox fx:id="docCheck" mnemonicParsing="false" text="Check Doc" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" GridPane.rowIndex="7">
+               <children>
+                  <CheckBox fx:id="tiresCheck" mnemonicParsing="false" text="Check Tires/ST" />
+               </children>
+            </HBox>
+            <TextField fx:id="unitNumberField" GridPane.columnIndex="1" />
+            <TextField fx:id="presentOdoField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="gastLtrsField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="tripLbl" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Previous Odo" GridPane.rowIndex="2" />
+            <Label fx:id="previousOdoLbl" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Car Ratio" GridPane.rowIndex="6" />
+            <Label fx:id="carRatioLbl" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="driverLbl" text="No Driver" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="334.0" layoutY="99.0" prefHeight="240.0" prefWidth="284.0">
+         <children>
+            <Label text="Remarks" GridPane.valignment="TOP" />
+            <Label text="Date" GridPane.rowIndex="1" />
+            <TextArea fx:id="remarksField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+            <DatePicker fx:id="dateField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="59.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="225.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="201.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="28.0" prefHeight="45.0" prefWidth="605.0" style="-fx-background-color: #2863d0;" text="Checking Vehicle" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_RIGHT" layoutX="454.0" layoutY="399.0" prefHeight="25.0" prefWidth="165.0" spacing="5.0">
+         <children>
+            <Button fx:id="okBtn" layoutX="156.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="80.0" text="OK" />
+            <Button layoutX="219.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="80.0" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

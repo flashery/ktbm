@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane prefHeight="369.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BalanceDialogController">
+   <children>
+      <GridPane layoutX="30.0" layoutY="48.0" prefHeight="268.0" prefWidth="280.0" style="-fx-border-color: #808080;">
+         <children>
+         <Label text="Driver" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+         <TextField fx:id="driverField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+         <Label text="Cashbonds" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+         <TextField fx:id="cashbondsField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Label text="Damages" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+         <TextField fx:id="damagesField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Label text="Loans" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+         <TextField fx:id="loansField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <Label text="Participations" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+         <TextField fx:id="participationsField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         <Label text="Penalties" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+         <TextField fx:id="penaltiesField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <Label text="Shortages" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+         <TextField fx:id="shortagesField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <DatePicker fx:id="dateField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Date" GridPane.rowIndex="7" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="78.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="190.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="26.0" prefHeight="30.0" />
+            <RowConstraints maxHeight="38.0" minHeight="30.0" prefHeight="31.0" />
+            <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" />
+         </rowConstraints>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+      <HBox layoutX="145.0" layoutY="330.0" spacing="5.0">
+         <children>
+            <Button layoutX="156.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="80.0" text="OK" />
+            <Button layoutX="219.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="80.0" text="Cancel" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="14.0" prefHeight="35.0" prefWidth="280.0" style="-fx-background-color: #E8EFFF; -fx-border-color: #808080;">
+         <children>
+            <Label layoutX="86.0" layoutY="14.0" text="Add Balances" textFill="#042f62">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

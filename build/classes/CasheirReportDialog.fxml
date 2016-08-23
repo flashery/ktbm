@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="516.0" prefWidth="318.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <GridPane layoutX="19.0" layoutY="48.0" prefHeight="390.0" prefWidth="281.0" style="-fx-border-color: #808080;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="51.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="3.0" prefWidth="15.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="210.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="1000" GridPane.halignment="RIGHT" />
+            <Label text="500" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="200" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Label text="100" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <Label text="50" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <Label text="20" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <Label text="10" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <Label text="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+            <Label text="0.50" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+            <Label text="0.25" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+            <Label text="0.10" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
+            <Label text="0.05" GridPane.halignment="RIGHT" GridPane.rowIndex="12" />
+            <TextField fx:id="thousandsField" GridPane.columnIndex="2" />
+            <TextField fx:id="fiveHundredsField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="twoHundredsField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="hundredsField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="fiftiesField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="twentiesField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="fivesField" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="tensField" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="pesosField" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <TextField fx:id="fiftyCentsField" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <TextField fx:id="twentyFiveCentsField" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <TextField fx:id="tenCentsField" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <TextField fx:id="fiveCentsField" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Label text="5" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="19.0" layoutY="14.0" prefHeight="35.0" prefWidth="281.0" style="-fx-background-color: #E8EFFF; -fx-border-color: #808080;">
+         <children>
+            <Label layoutX="86.0" layoutY="14.0" text="Add Money Bills" textFill="#042f62">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="135.0" layoutY="477.0" spacing="5.0">
+         <children>
+            <Button layoutX="156.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="80.0" text="OK" />
+            <Button layoutX="219.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="80.0" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
