@@ -25,6 +25,7 @@ public class Dispatch {
 	private SimpleIntegerProperty unitNumber;
 	private SimpleStringProperty vehicle;
 	private SimpleStringProperty admin;
+        private SimpleStringProperty timeIn;
 	private SimpleStringProperty timeOut;
 	private SimpleStringProperty brand;
 	private SimpleDoubleProperty rate;
@@ -37,11 +38,11 @@ public class Dispatch {
      * Default constructor.
      */
     public Dispatch() {
-        this(0, null, 0, null, null, null, null, 0.0, null, null, null);
+        this(0, null, 0, null, null, null, null, null, 0.0, null, null, null);
     }
 
 	
-	public Dispatch(int id, String driver, int unitNumber, String vehicle, String admin, String tOut, 
+	public Dispatch(int id, String driver, int unitNumber, String vehicle, String admin, String tIn, String tOut, 
 					String brand, double rate, String contactNumber, String status, String date) {
 		
 		this.id = new SimpleIntegerProperty(id);
@@ -49,6 +50,7 @@ public class Dispatch {
 		this.unitNumber = new SimpleIntegerProperty(unitNumber);
 		this.vehicle = new SimpleStringProperty(vehicle);
 		this.admin = new SimpleStringProperty(admin);
+                this.timeIn = new SimpleStringProperty(tIn);
 		this.timeOut = new SimpleStringProperty(tOut);
 		this.brand = new SimpleStringProperty(brand);
 		this.rate = new SimpleDoubleProperty(rate);
@@ -99,14 +101,13 @@ public class Dispatch {
 	public String getAdmin() {
 		return this.admin.get();
 	}
-	/*
 	public void setTimeIn( String tIn) {
 		this.timeIn.set(tIn);
 	}
 
 	public  String getTimeIn() {
 		return this.timeIn.get();
-	}*/
+	}
 	
 	public void setTimeOut( String tOut) {
 		this.timeOut.set(tOut);

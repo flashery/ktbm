@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="KTBM.jar" size="5031156" download="eager" />
+    <jar href="KTBM.jar" size="5014171" download="eager" />
     <jar href="lib\controlsfx-8.40.9.jar" size="1016589" download="eager" />
     <jar href="lib\jfx-autocomplete-textfield-0.0.1.jar" size="28514" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.29-bin.jar" size="876733" download="eager" />

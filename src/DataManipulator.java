@@ -753,8 +753,8 @@ public class DataManipulator {
      * ============= INSERT DISPACTH DATA ON THE DATABASE ============
      * ***************************************************************
      */
-    public void insertDispatchData(ProgressIndicator progInd, String table_name, String driver, String vehicle, String admin, String timeOut,
-            double rate, String status, String date) {
+    public void insertDispatchData(ProgressIndicator progInd, String table_name, String driver, int unitNumber, String vehicle, String admin, String timeIn, String timeOut,
+            String brand, double rate, String status, String date) {
 
         Platform.runLater(new Runnable() {
 
@@ -763,6 +763,7 @@ public class DataManipulator {
                 progInd.setOpacity(1);
             }
         });
+        
         Statement statement = null;
 
         // initializing the query statement
@@ -806,11 +807,14 @@ public class DataManipulator {
                 adminId = rsAdmin.getInt("id");
             }
 
-            String query = "INSERT INTO " + table_name + " (driver_id, vehicle_id, admin_id, time_out, vehicle_rate, status, date) "
+            String query = "INSERT INTO " + table_name + " (driver_id, unit_number, vehicle_id, admin_id, time_in, time_out, brand, vehicle_rate, status, date) "
                     + "VALUES (" + driverId + ", "
+                    + "" + + unitNumber + ", "
                     + "" + vehicleId + ", "
                     + "" + adminId + ", "
+                     + "" + timeIn + ", "
                     + "\"" + timeOut + "\", "
+                    + "\"" + brand + "\", "
                     + "" + rate + ", "
                     + "\"" + status + "\", \"" + date + "\")";
 

@@ -43,7 +43,7 @@ public class DispatchController implements Initializable {
 	/*
 	 * TODO: 1). Add admin user column 2). Set Unconstrained table
 	 */
-	private final String CSV_FILE_NAME = "C:\\Dispatch.csv";
+	private final String CSV_FILE_NAME = "C:\\Users\\Public\\Documents";
 
 	private Main main = new Main();
 
@@ -258,10 +258,18 @@ public class DispatchController implements Initializable {
 
 				// Che0ck if time out is null
 				String timeOut = "";
-				if (rs.getString(5) == null) {
+				if (rs.getString("time_out") == null) {
 					timeOut = null;
 				} else {
-					timeOut = DateUtil.formatStringDT(rs.getString(5));
+					timeOut = DateUtil.formatStringDT(rs.getString("time_out"));
+				}
+                                
+                                // Che0ck if time out is null
+				String timeIn = "";
+				if (rs.getString("time_in") == null) {
+					timeOut = null;
+				} else {
+					timeOut = DateUtil.formatStringDT(rs.getString("time_in"));
 				}
 
 
@@ -271,12 +279,13 @@ public class DispatchController implements Initializable {
 						rs.getInt("v.unit_number"), 
 						rs.getString("v.plate_number"), 
 						adminName, 
+                                                timeIn,
 						timeOut, 
 						rs.getString("v.brand"), 
 						rs.getDouble("v.rate"), 
 						rs.getString("d.contact_number"), 
-						rs.getString(7), 
-						DateUtil.formatDate(rs.getString(8))));
+						rs.getString("status"), 
+						DateUtil.formatDate(rs.getString("date"))));
 
 			}
 			
@@ -533,9 +542,14 @@ public class DispatchController implements Initializable {
 
 			DataManipulator dataman = new DataManipulator();
 			dataman.insertDispatchData(progInd, Constants.DB_DISPATCH_TBL,
-					tempDispatch.getDriver(), tempDispatch.getVehicle(),
+					tempDispatch.getDriver(), 
+                                        tempDispatch.getUnitNumber(),
+                                        tempDispatch.getVehicle(),
 					tempDispatch.getAdmin(),
-					DateUtil.reformatStringDT(tempDispatch.getTimeOut()), tempDispatch.getRate(),
+                                        DateUtil.reformatStringDT(tempDispatch.getTimeIn()),
+					DateUtil.reformatStringDT(tempDispatch.getTimeOut()), 
+                                        tempDispatch.getBrand(),
+                                        tempDispatch.getRate(),
 					tempDispatch.getStatus(),
 					DateUtil.reformatDate(tempDispatch.getDate()));
 
