@@ -147,7 +147,7 @@ public class Main extends Application {
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
-			dialogStage.sizeToScene();
+                        dialogStage.sizeToScene();
 
                     // Set the controller.
                     switch (fxml) {
